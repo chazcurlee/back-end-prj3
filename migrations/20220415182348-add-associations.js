@@ -2,10 +2,12 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.updateColumn(
+    await queryInterface.changeColumn(
       'posts',
       'teacher_id',
       {
+        type: Sequelize.INTEGER,
+        allowNull: false,
         field: 'teacher_id',
         onDelete: 'CASCADE',
         references: {
@@ -14,10 +16,12 @@ module.exports = {
       }
       }
     )
-    await queryInterface.updateColumn(
+    await queryInterface.changeColumn(
       'comments',
       'post_id',
       {
+        type: Sequelize.INTEGER,
+        allowNull: false,
         field: 'post_id',
         onDelete: 'CASCADE',
         references: {
