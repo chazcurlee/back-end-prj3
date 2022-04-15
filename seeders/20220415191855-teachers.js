@@ -34,7 +34,7 @@ module.exports = {
           experience: 'I have a lot of experience',
           about: 'My name is Sam',
           image: ''
-        },
+        }
       ]
     )
   },
