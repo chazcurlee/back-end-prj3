@@ -1,13 +1,31 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.updateColumn(
+      'posts',
+      'teacher_id',
+      {
+        field: 'teacher_id',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'teachers',
+        key: 'id'
+      }
+      }
+    )
+    await queryInterface.updateColumn(
+      'comments',
+      'post_id',
+      {
+        field: 'post_id',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'posts',
+        key: 'id'
+      }
+      }
+    )
   },
 
   async down (queryInterface, Sequelize) {
