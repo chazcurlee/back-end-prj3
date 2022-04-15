@@ -4,21 +4,21 @@
   "description": "![Mindify](img/mar-bustos-ARVFsI-32Uk-unsplash.jpg \"Mindify\") *********** ### Creators: Magdalena Joseph, Ran Kim, Ifeoluwa Adebisi, Chaz Curlee ************",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node server.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chazcurlee/back-end-prj3.git"
+  "type": "git",
+  "url": "git+https://github.com/chazcurlee/back-end-prj3.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chazcurlee/back-end-prj3/issues"
+  "url": "https://github.com/chazcurlee/back-end-prj3/issues"
   },
   "homepage": "https://github.com/chazcurlee/back-end-prj3#readme",
   "dependencies": {
-    "express": "^4.17.3"
+  "express": "^4.17.3"
   }
-}
+  }
