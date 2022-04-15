@@ -7,8 +7,8 @@ module.exports = {
       'teacher_id',
       {
         field: 'teacher_id',
-      onDelete: 'CASCADE',
-      references: {
+        onDelete: 'CASCADE',
+        references: {
         model: 'teachers',
         key: 'id'
       }
@@ -19,8 +19,8 @@ module.exports = {
       'post_id',
       {
         field: 'post_id',
-      onDelete: 'CASCADE',
-      references: {
+        onDelete: 'CASCADE',
+        references: {
         model: 'posts',
         key: 'id'
       }
@@ -28,12 +28,10 @@ module.exports = {
     )
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.removeColumn(
+      'posts',
+      'teacher_id'
+    )
   }
 };
