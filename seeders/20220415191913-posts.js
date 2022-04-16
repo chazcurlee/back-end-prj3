@@ -6,7 +6,7 @@ module.exports = {
       'posts',
       [
         {
-          teacher_id: 1,
+          teacher_id: 2,
           title: 'Yoga Pose Of The Day: Warrior II/Virabhadrasana II',
           tag: 'yoga',
           image: 'https://47h07141n4wr3s4gyj49ii1d-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/AdobeStock_229202288-e1571412646136-1200x638.jpeg',
@@ -30,7 +30,7 @@ module.exports = {
           likes: 61
         },
         {
-          teacher_id: 3,
+          teacher_id: 4,
           title: 'Reishi Mushroom Benefits',
           tag: 'diet',
           image: 'https://cdn.shopify.com/s/files/1/0058/0252/4783/articles/Reishi_mushroom_benefits_4_1200x.jpg?v=1609701576',
