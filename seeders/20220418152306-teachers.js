@@ -10,7 +10,7 @@ module.exports = {
           lastName: 'Bobson',
           username: 'bobbobson',
           email: 'bobbobson@gmail.com',
-          password: 'bobbobson123',
+          passwordDigest: 'bobbobson123',
           experience: 'I have a lot of experience',
           about: 'My name is Bob',
           image: ''
@@ -20,7 +20,7 @@ module.exports = {
           lastName: 'Willson',
           username: 'WillWillson',
           email: 'WillWillson@gmail.com',
-          password: 'WillWillson123',
+          passwordDigest: 'WillWillson123',
           experience: 'I have a lot of experience',
           about: 'My name is Will',
           image: ''
@@ -30,7 +30,7 @@ module.exports = {
           lastName: 'Samson',
           username: 'SamSamson',
           email: 'SamSamson@gmail.com',
-          password: 'SamSamson123',
+          passwordDigest: 'SamSamson123',
           experience: 'I have a lot of experience',
           about: 'My name is Sam',
           image: ''
