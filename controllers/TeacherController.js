@@ -136,9 +136,3 @@ module.exports = {
     UpdatePost
 }
 
-// put waiting for group confirmation (for posts and profile)
-
-// delete waiting for group confirmation
-
-
-//localStorage.setItem('user', ':teacher_id')

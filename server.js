@@ -8,19 +8,25 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
-const controller = require('./controllers/TeacherController')
+const controllerT = require('./controllers/TeacherController')
+const controllerA = require('./controllers/AuthController')
 
-app.get('/posts', controller.GetAllPosts)
-app.get('/posts/:teacher_id', controller.GetIndTeacherPosts)
-app.get('/:teacher_id', controller.GetIndTeacher)
-app.get('/posts/postdetail/:post_id', controller.IndPost)
+app.get('/posts', controllerT.GetAllPosts)
+app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
+app.get('/:teacher_id', controllerT.GetIndTeacher)
+app.get('/posts/postdetail/:post_id', controllerT.IndPost)
 
-app.post('/posts/:teacher_id', controller.CreatePost)
-app.post('/comments/:post_id', controller.CreateComment)
+app.post('/posts/:teacher_id', controllerT.CreatePost)
+app.post('/comments/:post_id', controllerT.CreateComment)
+app.post('/login', controllerA.Login)
+app.post('/register', controllerA.Register)
 
-app.delete('/posts/:post_id', controller.DeletePost)
 
-app.put('/posts/:post_id', controller.UpdatePost)
+
+
+app.delete('/posts/:post_id', controllerT.DeletePost)
+
+app.put('/posts/:post_id', controllerT.UpdatePost)
 
 app.get('/', (req, res) => res.json({ message: 'Server Works'}))
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))
