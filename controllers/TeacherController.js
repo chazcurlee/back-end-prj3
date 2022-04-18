@@ -125,6 +125,19 @@ const UpdatePost = async (req, res) => {
     }
 }
 
+const UpdateTeacher = async (req, res) => {
+    try {
+        const teacherId = parseInt(req.params.teacher_id)
+        let updatedTeacher = await Teacher.update(req.body, {
+            where: {id: teacherId},
+            returning: true
+        })
+        res.send(updatedTeacher)
+    } catch (error) {
+        throw error
+    }
+}
+
 module.exports = {
     GetAllPosts,
     GetIndTeacher,
@@ -133,6 +146,7 @@ module.exports = {
     CreatePost,
     CreateComment,
     DeletePost,
-    UpdatePost
+    UpdatePost,
+    UpdateTeacher
 }
 

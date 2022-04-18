@@ -6,7 +6,7 @@ module.exports = {
       'posts',
       [
         {
-          teacher_id: 2,
+          teacher_id: 1,
           title: 'Yoga Pose Of The Day: Warrior II/Virabhadrasana II',
           tag: 'yoga',
           image: 'https://47h07141n4wr3s4gyj49ii1d-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/AdobeStock_229202288-e1571412646136-1200x638.jpeg',
@@ -14,7 +14,7 @@ module.exports = {
           likes: 4
         },
         {
-          teacher_id: 2,
+          teacher_id: 1,
           title: '10 Daily Affirmations. Choose the ones that fit you best',
           tag: 'positive mindset',
           image: 'https://shrm-res.cloudinary.com/image/upload/c_crop,h_704,w_1254,x_0,y_0/w_auto:100,w_1200,q_35,f_auto/v1/Tools%20and%20Samples/tk_wellness_sdydf0.jpg',
@@ -22,7 +22,7 @@ module.exports = {
           likes: 10
         },
         {
-          teacher_id: 3,
+          teacher_id: 2,
           title: '6-Minute At-Home Glutes Workout',
           tag: 'workout',
           image: 'https://starmarkfitnessstudio.com/wp-content/uploads/2020/05/A-Definitive-Guide-to-the-Best-Glute-Exercises.jpg',
@@ -30,7 +30,7 @@ module.exports = {
           likes: 61
         },
         {
-          teacher_id: 4,
+          teacher_id: 3,
           title: 'Reishi Mushroom Benefits',
           tag: 'diet',
           image: 'https://cdn.shopify.com/s/files/1/0058/0252/4783/articles/Reishi_mushroom_benefits_4_1200x.jpg?v=1609701576',
