@@ -65,20 +65,6 @@ const IndPost = async (req, res) => {
 
 }
 
-// const GetComments = async (req, res) => {
-
-//     try{
-
-//         const getComments = await Comment.findAll({
-//             where: {post_id: parseInt(req.params.post_id)}
-//         })
-//         res.send(getComments)
-//     } catch (error){
-//         throw error
-//     }
-
-
-// }
 
 const CreatePost = async (req, res) => {
 
@@ -108,7 +94,7 @@ const CreateComment = async (req, res) => {
             ...req.body
         }
         const newComment = await Comment.create(commentBody)
-        res.send(commentBody)
+        res.send(newComment)
     }catch(error) {
         throw error
     }
@@ -116,14 +102,38 @@ const CreateComment = async (req, res) => {
 
 }
 
+const DeletePost = async (req, res) => {
+    try {
+        const postId = parseInt(req.params.post_id)
+        const deletedPost = await Post.destroy({where: {id:postId}})
+        res.send({message: `Deleted post with an id of ${postId}`})
+    } catch(error) {
+        throw error
+    }
+}
+
+const UpdatePost = async (req, res) => {
+    try {
+        const postId = parseInt(req.params.post_id)
+        let updatedPost = await Post.update(req.body, {
+            where: {id: postId},
+            returning: true
+        })
+        res.send(updatedPost)
+    } catch (error) {
+        throw error
+    }
+}
+
 module.exports = {
     GetAllPosts,
     GetIndTeacher,
     GetIndTeacherPosts,
     IndPost,
-    // GetComments,
     CreatePost,
     CreateComment,
+    DeletePost,
+    UpdatePost
 }
 
 // put waiting for group confirmation (for posts and profile)
