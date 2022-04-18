@@ -34,10 +34,10 @@ const Login = async (req, res) => {
 
 const Register = async (req, res) => {
   try {
-    const { email, password, name } = req.body
+    const { password, email, firstName, lastName, username, experience, about, image } = req.body
     let passwordDigest = await middleware.hashPassword(password)
     const user = await Teacher.create({
-      email, name, passwordDigest
+        email, firstName, lastName, username, experience, about, image, passwordDigest
     })
     res.send(user)
 
