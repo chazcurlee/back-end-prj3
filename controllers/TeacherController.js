@@ -138,6 +138,32 @@ const UpdateTeacher = async (req, res) => {
     }
 }
 
+const UpdateLikes = async (req, res) => {
+    try{
+
+        const postId = parseInt(req.params.post_id)
+        let likes = parseInt(req.body.likes)
+
+        const postInfo = await Post.findByPk(postId)
+
+        let updatedLikes = await Post.update({
+            ...postInfo,
+            likes
+        }, 
+        {where: {id: postId},
+        returning: true
+        })
+
+        res.send(updatedLikes)
+    } catch (error) {
+        throw error
+    }
+    
+
+
+
+}
+
 module.exports = {
     GetAllPosts,
     GetIndTeacher,
@@ -147,6 +173,7 @@ module.exports = {
     CreateComment,
     DeletePost,
     UpdatePost,
-    UpdateTeacher
+    UpdateTeacher,
+    UpdateLikes,
 }
 

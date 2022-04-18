@@ -36,10 +36,14 @@ app.put('/posts/:post_id',
 middleware.stripToken,
 middleware.verifyToken,
 controllerT.UpdatePost)
+
 app.put('/:teacher_id',
 middleware.stripToken,
 middleware.verifyToken,
 controllerT.UpdateTeacher)
+
+app.put('/likes/:post_id', controllerT.UpdateLikes)
+
 
 app.get('/', (req, res) => res.json({ message: 'Server Works'}))
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))
