@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Post.init({
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     tag: {
       type: DataTypes.STRING,
       allowNull: false
