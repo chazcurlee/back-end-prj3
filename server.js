@@ -12,11 +12,7 @@ const controllerT = require('./controllers/TeacherController')
 const controllerA = require('./controllers/AuthController')
 
 app.get('/posts', controllerT.GetAllPosts)
-<<<<<<< HEAD
-app.get('/session', 
-=======
 app.get('/session',
->>>>>>> main
 middleware.stripToken,
 middleware.verifyToken,
 controllerA.CheckSession)
