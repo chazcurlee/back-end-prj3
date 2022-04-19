@@ -24,9 +24,6 @@ app.post('/comments/:post_id', controllerT.CreateComment)
 app.post('/login', controllerA.Login)
 app.post('/register', controllerA.Register)
 
-
-
-
 app.delete('/posts/:post_id', 
 middleware.stripToken,
 middleware.verifyToken,
@@ -41,6 +38,7 @@ app.put('/:teacher_id',
 middleware.stripToken,
 middleware.verifyToken,
 controllerT.UpdateTeacher)
+app.put('/likes/:post_id', controllerT.UpdateLikes)
 
 app.put('/likes/:post_id', controllerT.UpdateLikes)
 
