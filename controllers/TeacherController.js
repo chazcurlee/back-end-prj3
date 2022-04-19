@@ -18,7 +18,7 @@ const GetAllPosts = async (req, res) => {
 }
 
 const GetIndTeacher = async (req, res) => {
-
+    console.log('I am in this method')
     try{
 
         const indTeacher = await Teacher.findByPk(parseInt(req.params.teacher_id))
