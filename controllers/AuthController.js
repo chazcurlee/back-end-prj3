@@ -15,7 +15,7 @@ const Login = async (req, res) => {
       (await middleware.comparePassword(user.passwordDigest, req.body.password))
     ) {
       let payload = {
-        id: parseInt(user.id),
+        id: user.id,
         username: user.username,
 
       }
