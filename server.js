@@ -15,6 +15,10 @@ app.get('/posts', controllerT.GetAllPosts)
 app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
 app.get('/:teacher_id', controllerT.GetIndTeacher)
 app.get('/posts/postdetail/:post_id', controllerT.IndPost)
+app.get('/session',
+middleware.stripToken,
+middleware.verifyToken,
+controllerA.CheckSession)
 
 app.post('/posts/:teacher_id', 
 middleware.stripToken,
