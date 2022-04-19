@@ -32,32 +32,31 @@ const createToken = (payload) => {
 }
 
 const verifyToken = (req, res, next) => {
+    console.log('in verify token')
     const { token } = res.locals
-    try{
-        let payload = jwt.verify(token, APP_SECRET)
+    let payload = jwt.verify(token, APP_SECRET)
         if (payload) {
+            res.locals.payload = payload
             return next()
         }
-        resizeTo.status(401).send({status: 'error', msg: 'Unauthorized'})
-    } catch {
+        // resizeTo.status(401).send({status: 'error', msg: 'Unauthorized'})
         res.status(401).send({ status: 'error', msg: 'Unauthorized'})
     }
-}
+
 
 
 const stripToken = (req, res, next) => {
-
+    console.log('in strip token')
     try{
-        const token = req.headers
-        ['authorization'].split(' ')[1]
+        const token = req.headers['authorization'].split(' ')[1]
         if (token) {
             res.locals.token = token
             return next()
         }
-        res.status(401).send({
-            status: 'error',
-            msg: 'Unauthorized'
-        })
+        // res.status(401).send({
+        //     status: 'error',
+        //     msg: 'Unauthorized'
+        // })
     } catch (error) {
         res.status(401).send({
             status: 'error',

@@ -3,6 +3,7 @@ const middleware = require('../middleware')
 
 
 const Login = async (req, res) => {
+  console.log('login?')
   try {
 
     const user = await Teacher.findOne({
@@ -17,7 +18,6 @@ const Login = async (req, res) => {
       let payload = {
         id: user.id,
         username: user.username,
-
       }
       let token = middleware.createToken
       (payload)
@@ -31,6 +31,7 @@ const Login = async (req, res) => {
 }
 
 const Register = async (req, res) => {
+  console.log('registering again?')
   try {
     const { password, email, firstName, lastName, username, experience, about, image } = req.body
     let passwordDigest = await middleware.hashPassword(password)

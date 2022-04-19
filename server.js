@@ -12,10 +12,19 @@ const controllerT = require('./controllers/TeacherController')
 const controllerA = require('./controllers/AuthController')
 
 app.get('/posts', controllerT.GetAllPosts)
+<<<<<<< HEAD
+app.get('/session', 
+=======
 app.get('/session',
+>>>>>>> main
 middleware.stripToken,
 middleware.verifyToken,
 controllerA.CheckSession)
+app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
+app.get('/:teacher_id', controllerT.GetIndTeacher)
+app.get('/posts/postdetail/:post_id', controllerT.IndPost)
+
+
 app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
 app.get('/:teacher_id', controllerT.GetIndTeacher)
 app.get('/posts/postdetail/:post_id', controllerT.IndPost)
