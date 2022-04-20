@@ -16,38 +16,39 @@ app.get('/session',
 middleware.stripToken,
 middleware.verifyToken,
 controllerA.CheckSession)
-app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
-app.get('/:teacher_id', controllerT.GetIndTeacher)
-app.get('/posts/postdetail/:post_id', controllerT.IndPost)
-
-
-app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
-app.get('/:teacher_id', controllerT.GetIndTeacher)
-app.get('/posts/postdetail/:post_id', controllerT.IndPost)
-
 
 app.post('/posts/:teacher_id', 
-middleware.stripToken,
-middleware.verifyToken,
 controllerT.CreatePost)
+
+app.delete('/posts/:post_id', 
+controllerT.DeletePost)
+
+app.put('/posts/:post_id', 
+controllerT.UpdatePost)
+
+app.put('/:teacher_id',
+controllerT.UpdateTeacher)
+
+app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
+app.get('/:teacher_id', controllerT.GetIndTeacher)
+app.get('/posts/postdetail/:post_id', controllerT.IndPost)
+
+
+app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
+app.get('/:teacher_id', controllerT.GetIndTeacher)
+app.get('/posts/postdetail/:post_id', controllerT.IndPost)
+
+
+
 app.post('/comments/:post_id', controllerT.CreateComment)
 app.post('/login', controllerA.Login)
 app.post('/register', controllerA.Register)
 
-app.delete('/posts/:post_id', 
-middleware.stripToken,
-middleware.verifyToken,
-controllerT.DeletePost)
 
-app.put('/posts/:post_id', 
-middleware.stripToken,
-middleware.verifyToken,
-controllerT.UpdatePost)
 
-app.put('/:teacher_id',
-middleware.stripToken,
-middleware.verifyToken,
-controllerT.UpdateTeacher)
+
+
+
 app.put('/likes/:post_id', controllerT.UpdateLikes)
 
 app.put('/likes/:post_id', controllerT.UpdateLikes)
