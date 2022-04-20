@@ -17,12 +17,12 @@ middleware.stripToken,
 middleware.verifyToken,
 controllerA.CheckSession)
 app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
-app.get('/:teacher_id', controllerT.GetIndTeacher)
+
 app.get('/posts/postdetail/:post_id', controllerT.IndPost)
 
 
 app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
-app.get('/:teacher_id', controllerT.GetIndTeacher)
+
 app.get('/posts/postdetail/:post_id', controllerT.IndPost)
 
 
@@ -33,7 +33,7 @@ controllerT.CreatePost)
 app.post('/comments/:post_id', controllerT.CreateComment)
 app.post('/login', controllerA.Login)
 app.post('/register', controllerA.Register)
-
+app.get('/:teacher_id', controllerT.GetIndTeacher)
 app.delete('/posts/:post_id', 
 middleware.stripToken,
 middleware.verifyToken,
