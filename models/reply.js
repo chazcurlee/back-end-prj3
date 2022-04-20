@@ -11,13 +11,36 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Reply.belongsTo(models.Question, {
+        foreignKey: 'question_id',
+        as: 'question',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      }),
+      Reply.belongsToMany(models.Teacher, {
+        through: models.TeacherReply,
+        as: 'reply',
+        foreignKey: 'reply_id'
+      })
     }
   }
   Reply.init({
-    content: DataTypes.TEXT
+    question_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'question_id',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'questions',
+        key: 'id'
+      }
+    },
+    content: DataTypes.TEXT,
+    allowNull: false
   }, {
     sequelize,
     modelName: 'Reply',
+    tableName: 'replies'
   });
   return Reply;
 };
