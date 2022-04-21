@@ -36,11 +36,8 @@ controllerT.UpdateTeacher)
 
 
 app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
-
 app.get('/posts/postdetail/:post_id', controllerT.IndPost)
-
-
-
+app.get('/teacher_info', controllerT.GetAllTeacherUsernameNEmail)
 
 app.post('/posts/:teacher_id', controllerT.CreatePost)
 

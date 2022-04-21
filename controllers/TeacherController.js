@@ -164,6 +164,27 @@ const UpdateLikes = async (req, res) => {
 
 }
 
+const GetAllTeacherUsernameNEmail = async (req, res) => {
+    try {
+
+        const tUsernames = await Teacher.findAll({
+            attributes: ['username'],
+            order: [['username', "ASC"]]
+        })
+        const tEmails = await Teacher.findAll({
+            attributes: ['email']
+        })
+    
+        res.send({tUsernames, tEmails})
+
+    }catch (error) {
+        throw error
+    }
+
+
+
+}
+
 module.exports = {
     GetAllPosts,
     GetIndTeacher,
@@ -175,5 +196,6 @@ module.exports = {
     UpdatePost,
     UpdateTeacher,
     UpdateLikes,
+    GetAllTeacherUsernameNEmail,
 }
 
