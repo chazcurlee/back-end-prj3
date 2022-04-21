@@ -16,12 +16,12 @@ module.exports = (sequelize, DataTypes) => {
         as: 'teacher',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
-      }),
-      Teacher.belongsToMany(models.Reply, {
-        through: models.TeacherReply,
-        as: 'teacher',
-        foreignKey: 'teacher_id'
       })
+      // Teacher.belongsToMany(models.Reply, {
+      //   through: models.TeacherReply,
+      //   as: 'expert',
+      //   foreignKey: 'teacher_id'
+      // })
     }
   }
   Teacher.init({

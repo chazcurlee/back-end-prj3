@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       }),
       Question.hasMany(models.Reply, {
         foreignKey: 'question_id',
-        as: 'question',
+        as: 'replies',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     content: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,

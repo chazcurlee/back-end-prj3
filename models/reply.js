@@ -13,15 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Reply.belongsTo(models.Question, {
         foreignKey: 'question_id',
-        as: 'question',
+        as: 'replies',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
-      }),
-      Reply.belongsToMany(models.Teacher, {
-        through: models.TeacherReply,
-        as: 'reply',
-        foreignKey: 'reply_id'
       })
+      // Reply.belongsToMany(models.Teacher, {
+      //   through: models.TeacherReply,
+      //   as: 'reply',
+      //   foreignKey: 'reply_id'
+      // })
     }
   }
   Reply.init({
@@ -35,8 +35,10 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    content: DataTypes.TEXT,
-    allowNull: false
+    content: {
+      type:DataTypes.TEXT,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Reply',
