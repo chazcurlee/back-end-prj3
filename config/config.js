@@ -9,7 +9,7 @@ module.exports = {
     dialect: 'postgres'
   },
   production: {
-    use_env_variable: 'mindify_production',
+    database: 'mindify_production',
     dialect: 'postgres',
     dialectOptions: {
       ssl: {
