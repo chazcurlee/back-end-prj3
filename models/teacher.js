@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
+      // Teacher.belongsToMany(models.Reply, {
+      //   through: models.TeacherReply,
+      //   as: 'expert',
+      //   foreignKey: 'teacher_id'
+      // })
     }
   }
   Teacher.init({
@@ -31,15 +36,10 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
     },
     passwordDigest: {
       type: DataTypes.STRING,
