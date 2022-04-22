@@ -5,7 +5,6 @@ const user = require('../models/user')
 
 ////////////// GET CONTROLLERS //////////////
 
-//CONTROLLER BELOW STILL IN PROGRESS//
 const GetAllQuestions = async (req, res) => {
 
     try{ 
