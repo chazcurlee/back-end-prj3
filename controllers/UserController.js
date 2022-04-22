@@ -5,20 +5,20 @@ const user = require('../models/user')
 const GetAllQuestions = async (req, res) => {
 
     try{ 
-        let userId = []
-        let userName = []
+        // let userId = []
+        // let userName = []
         const allQuestions = await Question.findAll({
             include: [
                { model: Reply, as: 'replies', attributes: ['content'] },
             ]
         })
-        allQuestions.map((question) => {
-            userId.push(question.user_id)
-        })
-        const getUser = await User.findAll({
-            where: {id: parseInt(allQuestions.user_id)}
-        })
-        res.send(getUser)
+        // allQuestions.map((question) => {
+        //     userId.push(question.user_id)
+        // })
+        // const getUser = await User.findAll({
+        //     where: {id: parseInt(allQuestions.user_id)}
+        // })
+        res.send(allQuestions)
 
 
     }catch(error) {
