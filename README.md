@@ -4,8 +4,14 @@
 ### Creators: Magdalena Joseph, Ran Kim, Ifeoluwa Adebisi, Chaz Curlee
 ************
 
+![Mind1](img/mind1.png)
+
 ## Description:
 Mindify is a one stop shop for all your mental, emotional, and physical needs. Experienced teachers provide great lessons, recipes, and advice via posts. Any student can comment and like these posts.
+
+![Mind2](img/mind2.png)
+
+![Mind3](img/mind3.png)
 
 ******
 ## Technologies Used:
@@ -23,9 +29,23 @@ Mindify is a one stop shop for all your mental, emotional, and physical needs. E
     ![Node](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.centizen.com%2Fwp-content%2Fuploads%2F2020%2F03%2FNodejs_performance-800x534.png&f=1&nofb=1)
 
 ****
-## Getting Started and Updates:
+## Getting Started:
+- Fork and Clone Repo
+
+- npm i for both the frontend and backend directories
+
+- npm start in backend server before npm start frontend
+
 - [Trello Board](https://trello.com/b/7b1J7R2G/mindify)
-- ![ERD](img/erd.png)
+
+ ![ERD](img/erd.png)
+
+******
+## Future Updates:
+
+[] - Questions Page Incorporated
+
+[] - Stylizing Frontend Further
 
 *****
 ## Social Links:
@@ -36,3 +56,10 @@ Mindify is a one stop shop for all your mental, emotional, and physical needs. E
  - Ifeoluwa Adebisi: [Linkedin](https://www.linkedin.com/in/ifeoluwa-adebisi-b6a9911b7/) - [Github](https://github.com/SEIfeoluwa)
 
  - Chaz Curlee: [Linkedin](https://www.linkedin.com/in/magdalena-joseph8/) - [Github](https://github.com/chazcurlee)
+
+ ******
+ ## Credits:
+
+ - GA Past Lessons/Labs Repos
+
+ - Ben Manning and Nabila Ayaba
