@@ -1,11 +1,11 @@
+///////////////// IMPORT /////////////////////
 const { Teacher } = require('../models')
 const middleware = require('../middleware')
 
-
+///////////////// LOGIN FUNCTION ////////////////////
 const Login = async (req, res) => {
-  console.log('login?')
-  try {
 
+  try {
     const user = await Teacher.findOne({
       where: { username: req.body.username },
       raw: true
@@ -30,8 +30,9 @@ const Login = async (req, res) => {
   }
 }
 
+/////////////// REGISTER FUNCTION //////////////////
 const Register = async (req, res) => {
-  console.log('registering again?')
+
   try {
     const { password, email, firstName, lastName, username, experience, about, image } = req.body
     let passwordDigest = await middleware.hashPassword(password)
@@ -40,17 +41,18 @@ const Register = async (req, res) => {
     })
     res.send(user)
 
-
   } catch (error) {
     throw error
   }
 }
 
+//////////////// CHECKSESSION FUNCTION /////////////////
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
   res.send(payload)
 }
 
+//////////////// EXPORT ///////////////
 module.exports = {
   Login,
   Register,
