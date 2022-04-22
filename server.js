@@ -18,38 +18,35 @@ const controllerU = require('./controllers/UserController')
 ///////////////// ALL ROUTES ////////////////
 app.get('/', (req, res) => res.json({ message: 'Server Works'}))
 
-//AUTH ROUTES
-app.post('/login', controllerA.Login)
-app.post('/register', controllerA.Register)
+app.get('/posts', controllerT.GetAllPosts)
+app.get('/questions', controllerU.GetAllQuestions)
 app.get('/session',
 middleware.stripToken,
 middleware.verifyToken,
 controllerA.CheckSession)
-
-// GET ROUTES
-app.get('/posts', controllerT.GetAllPosts)
-app.put('/posts/:post_id', controllerT.UpdatePost)
-app.put('/:teacher_id', controllerT.UpdateTeacher)
+app.post('/posts/:teacher_id', 
+controllerT.CreatePost)
+app.delete('/posts/:post_id', 
+controllerT.DeletePost)
+app.put('/posts/:post_id', 
+controllerT.UpdatePost)
+app.put('/:teacher_id',
+controllerT.UpdateTeacher)
 app.get('/posts/:teacher_id', controllerT.GetIndTeacherPosts)
 app.get('/posts/postdetail/:post_id', controllerT.IndPost)
 app.get('/teacher_info', controllerT.GetAllTeacherUsernameNEmail)
-app.get('/:teacher_id', controllerT.GetIndTeacher)
-
-// POST ROUTES
 app.post('/posts/:teacher_id', controllerT.CreatePost)
 app.post('/comments/:post_id', controllerT.CreateComment)
-
-// DELETE ROUTES
-app.delete('/posts/:post_id', controllerT.DeletePost)
-
-// PUT ROUTES
-app.put('/likes/:post_id', controllerT.UpdateLikes)
-
-// POST MVP ROUTES //
-app.get('/questions', controllerU.GetAllQuestions)
 app.post('/newuser', controllerU.CreateUsers)
 app.post('/questions/:user_id', controllerU.CreateQuestions)
 app.post('/questions/reply/:question_id', controllerU.CreateReplies)
+app.post('/login', controllerA.Login)
+app.post('/register', controllerA.Register)
+app.get('/:teacher_id', controllerT.GetIndTeacher)
+app.delete('/posts/:post_id', controllerT.DeletePost)
+app.put('/likes/:post_id', controllerT.UpdateLikes)
+
+
 
 /////////// EXPRESS SERVER LISTEN TO PORT ///////////////
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))
