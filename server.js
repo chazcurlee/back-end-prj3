@@ -46,7 +46,7 @@ app.post('/questions/:user_id', controllerU.CreateQuestions)
 app.post('/questions/reply/:question_id', controllerU.CreateReplies)
 app.post('/login', controllerA.Login)
 app.post('/register', controllerA.Register)
-app.get('/:teacher_id', controllerT.GetIndTeacher)
+app.get('/user/:teacher_id', controllerT.GetIndTeacher)
 app.delete('/posts/:post_id', controllerT.DeletePost)
 app.put('/likes/:post_id', controllerT.UpdateLikes)
 
