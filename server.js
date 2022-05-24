@@ -9,7 +9,11 @@ const middleware = require('./middleware')
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
-
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://peaceful-falls-00710.herokuapp.com/"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 /////////// DEFINE CONTROLLER VARIABLES /////////////
 const controllerT = require('./controllers/TeacherController')
 const controllerA = require('./controllers/AuthController')
